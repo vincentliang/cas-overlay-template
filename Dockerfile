@@ -23,8 +23,7 @@ LABEL "Description"="Apereo CAS"
 RUN cd / \
     && mkdir -p /etc/cas/config \
     && mkdir -p /etc/cas/services \
-#    && mkdir -p /etc/cas/saml \6.5.0-SNAPSHOT/maven-metadata.xml
-    && mkdir -p /etc/cas/saml \6.4.2/maven-metadata.xml
+    && mkdir -p /etc/cas/saml \
     && mkdir -p cas-overlay;
 
 COPY --from=overlay cas-overlay/build/libs/cas.war cas-overlay/
