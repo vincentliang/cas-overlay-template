@@ -13,7 +13,7 @@ RUN mkdir -p ~/.gradle \
     && ./gradlew --version;
 
 RUN cd cas-overlay \
-    && ./gradlew -Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=10801 -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=10801 "-Dhttp.nonProxyHosts=*.nonproxyrepos.com|localhost" clean build --parallel --no-daemon;
+    && ./gradlew -Dhttp.proxyHost=192.168.88.66 -Dhttp.proxyPort=10801 -Dhttps.proxyHost=192.168.88.66 -Dhttps.proxyPort=10801 "-Dhttp.nonProxyHosts=*.nonproxyrepos.com|localhost" clean build --parallel --no-daemon;
 
 FROM adoptopenjdk/openjdk11:alpine-jre AS cas
 
