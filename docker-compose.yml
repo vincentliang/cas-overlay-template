@@ -1,7 +1,12 @@
 version: '3'
 services:
   cas:
+    container_name: cas_compose
     build: .
     ports:
      - "8443:8443"
      - "8080:8080"
+    volumes:
+      -v /etc/cas/thekeystore:/etc/cas/thekeystore
+    restart: always
+    privileged: true
